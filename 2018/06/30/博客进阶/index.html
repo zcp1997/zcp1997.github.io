@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>maupassant-hexo博客主题的进阶使用 | ZCP的“咸”聊</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">maupassant-hexo博客主题的进阶使用</h1><a id="logo" href="/.">ZCP的“咸”聊</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/guestbook/"><i class="fa fa-handshake-o"> 留言</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">maupassant-hexo博客主题的进阶使用</h1><div class="post-content"><p>[TOC]</p>
+<h2 id="hexo的维护"><a href="#hexo的维护" class="headerlink" title="hexo的维护"></a>hexo的维护</h2><h4 id="hexo如何换源下载hexo-renderer-sass"><a href="#hexo如何换源下载hexo-renderer-sass" class="headerlink" title="hexo如何换源下载hexo-renderer-sass"></a>hexo如何换源下载hexo-renderer-sass</h4><p>安装淘宝镜像org,在git中输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>然后用cnmp换源，在git中输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnmp install hexo-renderer-sass --save</span><br></pre></td></tr></table></figure>
+<p>即可成功安装插件，css样式能在网页上显示。</p>
+<h4 id="Hexo-文章字数统计与阅读时长"><a href="#Hexo-文章字数统计与阅读时长" class="headerlink" title="Hexo-文章字数统计与阅读时长"></a>Hexo-文章字数统计与阅读时长</h4><p><a href="https://github.com/tufu9441/maupassant-hexo/commit/d990a41fbe7a67b1f3bc5a69ce2b8b66481a7495" target="_blank" rel="noopener">代码修改地址</a></p>
+<p>在hexo目录下安装wordcount插件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure>
+<p>同时不要忘记在主题目录下的_config.yml文件中将wordcount开关置为true。</p>
+<h4 id="统计网页浏览人数"><a href="#统计网页浏览人数" class="headerlink" title="统计网页浏览人数"></a>统计网页浏览人数</h4><p>在主题目录下的_config.yml文件中将busuanzi开关置为true。</p>
+<h2 id="menu的增加"><a href="#menu的增加" class="headerlink" title="menu的增加"></a>menu的增加</h2><h4 id="config-yml更改"><a href="#config-yml更改" class="headerlink" title="_config.yml更改"></a>_config.yml更改</h4><p>在主题目录下的_config.yml中找到menu选项代码，在之中按格式添加page:</p>
+<p>如要增加留言选项，代码可设置为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- page: guestbook</span><br><span class="line">  directory: guestbook/</span><br><span class="line">  icon: fa-handshake-o</span><br></pre></td></tr></table></figure>
+<h4 id="建立index-md"><a href="#建立index-md" class="headerlink" title="建立index.md"></a>建立index.md</h4><p>在hexo\source目录下增加该page的同名目录，如上文中增加guestbook文件夹，新建index.md，front-matter中增加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout: page //注意page前面的空格</span><br></pre></td></tr></table></figure>
+<h4 id="icon图标的选择和更改"><a href="#icon图标的选择和更改" class="headerlink" title="icon图标的选择和更改"></a>icon图标的选择和更改</h4><p>icon可在Font Awesome网页中自行选择适合自己的图标，个性化设置。</p>
+<p><a href="http://fontawesome.dashgame.com/" target="_blank" rel="noopener">Font Awesome地址</a></p>
+<p>如上文中我选择 fa-handshake-o 的icon使用留言板。</p>
+</div></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://yoursite.com/2018/06/30/博客进阶/';
+    this.page.identifier = '2018/06/30/博客进阶/';
+    this.page.title = 'maupassant-hexo博客主题的进阶使用';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//zcp1997-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//zcp1997-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://zcp1997-github-io.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/科技/">科技</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/博客/" style="font-size: 15px;">博客</a> <a href="/tags/考研/" style="font-size: 15px;">考研</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/30/博客进阶/">maupassant-hexo博客主题的进阶使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/27/考研的路-难/">考研的路 难</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/27/安装博客的艰辛历程/">安装博客的艰辛历程</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//zcp1997-github-io.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://twitter.com/zcp19972" title="twitter" target="_blank">twitter</a><ul></ul><a href="https://www.instagram.com/zouchengpan/" title="instgram" target="_blank">instgram</a><ul></ul><a href="https://www.cordcloud.me" title="安利一下老板娘的机场" target="_blank">安利一下老板娘的机场</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">ZCP的“咸”聊.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" color="0,0,0" opacity="0.5" zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
